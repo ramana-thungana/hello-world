@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Another Stage'
                 echo "Running Job : ${JOB_NAME} with ID: ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo 'output : ${PARAM_SAMPLE}'
+                sh  'echo ${PARAM_SAMPLE}'
             }
         }
     }
