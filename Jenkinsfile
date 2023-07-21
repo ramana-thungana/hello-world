@@ -12,7 +12,6 @@ pipeline {
             post {
               success {
                 echo 'Build post message has diplayed as an example.'
-                sh 'mail to: ramprints2013@gmail.com, subject: 'The pipeline Job successful! ID: ${env.BUILD_ID} on ${env.JENKINS_URL}''
               }
             }
         }
