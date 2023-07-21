@@ -8,6 +8,7 @@ pipeline {
         stage('SCM trigger -update') {
             steps {
                 echo 'SCM Git trigger Jenkinsfile'
+                echo "branch name : ${env.BRANCH_NAME}"
             }
             post {
               success {
