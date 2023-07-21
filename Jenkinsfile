@@ -6,9 +6,6 @@ pipeline {
     
     stages {
         stage('SCM trigger -update') {
-           agent { 
-                label 'linux SCM'
-            }
             steps {
                 echo 'SCM Git trigger Jenkinsfile'
             }
@@ -19,9 +16,7 @@ pipeline {
             }
         }
         stage('Multistage Example') {
-            agent { 
-                label 'MUltistage Label'
-            }
+
             steps {
                 echo 'Another Stage'
                 echo "Running Job : ${JOB_NAME} with ID: ${env.BUILD_ID} on ${env.JENKINS_URL}"
