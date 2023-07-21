@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1') {
+        stage('SCM trigger') {
             steps {
-                echo 'Hello world!'
+                echo 'SCM Git trigger Jenkinsfile'
             }
         }
     }
