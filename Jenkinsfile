@@ -5,10 +5,10 @@ pipeline {
      }
     
     stages {
-        environment {
-            BRANCH_NAME = 'Master-dev'
-        }
         stage('SCM trigger -update') {
+            environment {
+                BRANCH_NAME = 'Master-dev'
+            }
             steps {
                 echo 'SCM Git trigger Jenkinsfile'
                 echo "branch name : ${env.BRANCH_NAME}"
