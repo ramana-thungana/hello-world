@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('SCM trigger -auto') {
+        stage('SCM trigger -update') {
             steps {
                 echo 'SCM Git trigger Jenkinsfile'
             }
