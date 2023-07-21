@@ -5,6 +5,11 @@ pipeline {
             steps {
                 echo 'SCM Git trigger Jenkinsfile'
             }
+            post {
+              success {
+                echo 'Build post message has diplayed as an example.'
+              }
+            }
         }
     }
 }
