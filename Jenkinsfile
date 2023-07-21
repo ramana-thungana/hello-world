@@ -14,6 +14,7 @@ pipeline {
         stage('Multistage Example') {
             steps {
                 echo 'Another Stage'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }
