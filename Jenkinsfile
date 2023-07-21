@@ -11,5 +11,10 @@ pipeline {
               }
             }
         }
+        stage('Multistage Example') {
+            steps {
+                echo 'Another Stage'
+            }
+        }
     }
 }
