@@ -5,6 +5,9 @@ pipeline {
      }
     
     stages {
+        environment {
+            BRANCH_NAME = 'Master-dev'
+        }
         stage('SCM trigger -update') {
             steps {
                 echo 'SCM Git trigger Jenkinsfile'
