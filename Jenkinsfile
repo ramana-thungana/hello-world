@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    #Demo parameters
     parameters {
         string(name: 'PARAM_SAMPLE', defaultValue: 'This is a sample Param Value', description: 'demo!')
      }
