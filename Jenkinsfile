@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: 'PARAM_SAMPLE', defaultValue: 'This is a sample Param Value', description: 'demo!')
-        choice(name: 'CHOICE_LIST', defaultValue: ['one','two', 'three'], description: 'Choices of the list')
+        choice(name: 'CHOICE_LIST', choices: ['one','two', 'three'], description: 'Choices of the list')
      }
     
     stages {
