@@ -4,9 +4,6 @@ pipeline {
         string(name: 'PARAM_SAMPLE', defaultValue: 'This is a sample Param Value', description: 'demo!')
         choice(name: 'CHOICE_LIST', choices: ['one','two', 'three'], description: 'Choices of the list')
      }
-    tools {
-        maven 'apache-maven-3.0.1' 
-     }
     
     stages {
         stage('SCM trigger -update') {
@@ -36,11 +33,6 @@ pipeline {
                 echo "Display CHOICE Param : ${params.CHOICE_LIST}"
             }
         }       
-        stage('Tools Demo') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
         stage('Input Demo') {
             input {
                 message "Should we continue?"
