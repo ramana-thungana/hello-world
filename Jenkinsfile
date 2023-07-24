@@ -25,12 +25,12 @@ pipeline {
             steps {
                 echo 'Another Stage'
                 echo "Running Job : ${JOB_NAME} with ID: ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh  'echo ${PARAM_SAMPLE}'
+                echo "Params : ${params.PARAM_SAMPLE}"
             }
         }
         stage('Parameters') {
             steps {
-                echo " Disply CHOICE Param : ${CHOICE_LIST}"
+                echo "Display CHOICE Param : ${params.CHOICE_LIST}"
             }
         }
     }
