@@ -54,6 +54,6 @@ pipeline {
             steps {
                 echo 'Master branch for PROD deploy'
             }
-        
+        }
  }
 }
