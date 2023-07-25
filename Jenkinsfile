@@ -33,7 +33,7 @@ pipeline {
                 echo "Display CHOICE Param : ${params.CHOICE_LIST}"
             }
         }       
-        stage('Input Demo') {
+        stage('Input Demo!') {
             input {
                 message "Should we continue??"
                 ok "Yes, we should."
