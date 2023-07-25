@@ -20,7 +20,7 @@ pipeline {
               }
             }
         }
-        stage('Multistage Example') {
+        stage('Multistage Examplee') {
 
             steps {
                 echo 'Another Stage'
