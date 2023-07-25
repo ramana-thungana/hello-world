@@ -49,7 +49,7 @@ pipeline {
 
         stage('Example When') {
             when {
-                branch 'master'
+                expression {${env.BRANCH_NAME ==~ /Master-dev/}}
             }
             steps {
                 echo 'Master branch for PROD deploy'
