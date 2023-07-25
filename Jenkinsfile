@@ -50,6 +50,7 @@ pipeline {
         stage('Example When') {
             when {
                 branch 'master'
+                environment name: 'BRANCH_NAME', value: 'Master-dev'
             }
             steps {
                 echo 'Master branch for PROD deploy'
