@@ -16,7 +16,7 @@ pipeline {
             }
             post {
               success {
-                echo 'Build post message has diplayed as an example.'
+                echo 'Build post message has diplayed as ann example.'
               }
             }
         }
