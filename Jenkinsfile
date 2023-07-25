@@ -46,5 +46,14 @@ pipeline {
     //             echo "Hello, ${PERSON}, nice to meet you."
     //         }        
     // }
+
+        stage('Example When') {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'Master branch for PROD deploy'
+            }
+        
  }
 }
