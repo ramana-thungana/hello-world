@@ -48,76 +48,76 @@ pipeline {
     //         }        
     // }
 
-    // stage('Parallel In Sequential') {
-    //     parallel {
-    //         stage('In Parallel 1') {
-    //             steps {
-    //                 echo "In Parallel 1"
+    stage('Parallel In Sequential') {
+        parallel {
+            stage('In Parallel 1') {
+                steps {
+                    echo "In Parallel 1"
+                }
+            }
+            stage('In Parallel 2') {
+                steps {
+                    echo "In Parallel 2"
+                }
+            }
+        }
+    }
+        
+    // stage('BuildAndTest') {
+    //     matrix {
+    //         agent {
+    //             label "${PLATFORM}-agent"
+    //         }
+    //         when { anyOf {
+    //             expression { params.PLATFORM_FILTER == 'all' }
+    //             expression { params.PLATFORM_FILTER == env.PLATFORM }
+    //         } }
+    //         axes {
+    //             axis {
+    //                 name 'PLATFORM'
+    //                 values 'linux', 'windows', 'mac'
+    //             }
+    //             axis {
+    //                 name 'BROWSER'
+    //                 values 'firefox', 'chrome', 'safari', 'edge'
     //             }
     //         }
-    //         stage('In Parallel 2') {
-    //             steps {
-    //                 echo "In Parallel 2"
+    //         excludes {
+    //             exclude {
+    //                 axis {
+    //                     name 'PLATFORM'
+    //                     values 'linux'
+    //                 }
+    //                 axis {
+    //                     name 'BROWSER'
+    //                     values 'safari'
+    //                 }
+    //             }
+    //             exclude {
+    //                 axis {
+    //                     name 'PLATFORM'
+    //                     notValues 'windows'
+    //                 }
+    //                 axis {
+    //                     name 'BROWSER'
+    //                     values 'edge'
+    //                 }
+    //             }
+    //         }
+    //         stages {
+    //             stage('Build') {
+    //                 steps {
+    //                     echo "Do Build for ${PLATFORM} - ${BROWSER}"
+    //                 }
+    //             }
+    //             stage('Test') {
+    //                 steps {
+    //                     echo "Do Test for ${PLATFORM} - ${BROWSER}"
+    //                 }
     //             }
     //         }
     //     }
     // }
-        
-        stage('BuildAndTest') {
-            matrix {
-                agent {
-                    label "${PLATFORM}-agent"
-                }
-                when { anyOf {
-                    expression { params.PLATFORM_FILTER == 'all' }
-                    expression { params.PLATFORM_FILTER == env.PLATFORM }
-                } }
-                axes {
-                    axis {
-                        name 'PLATFORM'
-                        values 'linux', 'windows', 'mac'
-                    }
-                    axis {
-                        name 'BROWSER'
-                        values 'firefox', 'chrome', 'safari', 'edge'
-                    }
-                }
-                excludes {
-                    exclude {
-                        axis {
-                            name 'PLATFORM'
-                            values 'linux'
-                        }
-                        axis {
-                            name 'BROWSER'
-                            values 'safari'
-                        }
-                    }
-                    exclude {
-                        axis {
-                            name 'PLATFORM'
-                            notValues 'windows'
-                        }
-                        axis {
-                            name 'BROWSER'
-                            values 'edge'
-                        }
-                    }
-                }
-                stages {
-                    stage('Build') {
-                        steps {
-                            echo "Do Build for ${PLATFORM} - ${BROWSER}"
-                        }
-                    }
-                    stage('Test') {
-                        steps {
-                            echo "Do Test for ${PLATFORM} - ${BROWSER}"
-                        }
-                    }
-                }
-            }
-        }
        
  }
 }
