@@ -62,7 +62,7 @@ pipeline {
                         }
                     }
                 }
-    stages {
+        
         stage('BuildAndTest') {
             matrix {
                 agent {
@@ -118,8 +118,6 @@ pipeline {
                 }
             }
         }
-    }
-
-        
+       
  }
 }
